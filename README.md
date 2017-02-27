@@ -7,6 +7,8 @@ a unique generated URL representing a project. You can create as many as you wan
 settings of your API Fortress trial/subscription account.
 
 ## Modes
+There are 4 testing modes available. "Run single test" will run a single test, while the others will
+run suites of tests.
 
 ### Run single test
 You can run a single test by providing a test ID. Test IDs can be found in test interstitial pages.
@@ -24,6 +26,7 @@ in the test details.
 By running a full project, you'll be running all tests contained in the project.
 
 ## Options
+The following options can apply to any mode.
 
 ### Blocking
 The plugin can silently run (blocking = false), let the build continue with a success and inform you if the
