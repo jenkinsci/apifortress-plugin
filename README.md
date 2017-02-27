@@ -6,7 +6,7 @@ The key parameter that you need to retrieve from API Fortress for any mode, is t
 a unique generated URL representing a project. You can create as many as you want in the company
 settings of your API Fortress trial/subscription account.
 
-## Actions
+## Modes
 
 ### Run single test
 You can run a single test by providing a test ID. Test IDs can be found in test interstitial pages.
