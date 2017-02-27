@@ -1,0 +1,5 @@
+<?jelly escape-by-default='true'?>
+<div>
+  This plugin allows you to integrate <a href="http://apifortress.com" target="_blank">API Fortress</a> API testing
+  in your Jenkins CI projects.
+</div>

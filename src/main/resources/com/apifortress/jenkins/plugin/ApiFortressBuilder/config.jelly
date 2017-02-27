@@ -1,0 +1,58 @@
+<?jelly escape-by-default='true'?>
+<j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
+
+    <script>
+         var dId;
+         function validMe(mode){
+
+         }
+    </script>
+  <f:entry name="mode" title="Choose Mode" field="mode">
+      <select name="mode" onchange="validMe(mode);">
+          <f:option value="singleTest" selected="${instance.mode=='singleTest'}">Single Test</f:option>
+          <f:option value="automatch" selected="${instance.mode=='automatch'}">Automatch</f:option>
+          <f:option value="tag" selected="${instance.mode=='tag'}">by Tag</f:option>
+          <f:option value="project" selected="${instance.mode=='project'}">by Project   </f:option>
+      </select>
+  </f:entry>
+
+  <f:entry title="Hook URL" field="hook" description="The automation HOOK url. It can be generated in the company admin page" id="gen">
+    <f:textbox/>
+  </f:entry>
+
+  <f:entry title="ID/URL/Tag" field="id" description="The test ID can be found in the interstitial page of the test itself. For the automatch pattern, follow this guide http://apifortress.com/doc/automatch/ ">
+      <f:textbox/>
+    </f:entry>
+  <f:entry title="Blocking test" field="blocking" name="blocking" description="If checked, the build flow will stop if the test(s) fail">
+    <f:checkbox/>
+  </f:entry>
+  <f:section title="Advanced Options">
+    <f:entry name="dryrun" field="dryrun" title="Dry run" description="The event won't be stored within API Fortress">
+     <f:checkbox />
+    </f:entry>
+    <f:entry name="silent" field="silent" title="Silent" description="No notifications will be sent">
+        <f:checkbox />
+    </f:entry>
+  </f:section>
+  <f:section title="Overrides">
+    <f:entry name="param1name" field="param1name" title="Param #1 Name">
+        <f:textbox />
+    </f:entry>
+    <f:entry name="param1value" field="param1value" title="Param #1 value">
+        <f:textbox />
+    </f:entry>
+
+    <f:entry name="param2name" field="param2name" title="Param #2 Name">
+       <f:textbox />
+    </f:entry>
+    <f:entry name="param2value" field="param2value" title="Param #2 value">
+       <f:textbox />
+    </f:entry>
+    <f:entry name="param3name" field="param3name" title="Param #3 Name">
+         <f:textbox />
+    </f:entry>
+    <f:entry name="param3value" field="param3value" title="Param #3 value">
+         <f:textbox />
+    </f:entry>
+  </f:section>
+</j:jelly>
