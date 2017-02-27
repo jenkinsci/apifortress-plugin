@@ -1,14 +1,8 @@
 <?jelly escape-by-default='true'?>
 <j:jelly xmlns:j="jelly:core" xmlns:st="jelly:stapler" xmlns:d="jelly:define" xmlns:l="/lib/layout" xmlns:t="/lib/hudson" xmlns:f="/lib/form">
 
-    <script>
-         var dId;
-         function validMe(mode){
-
-         }
-    </script>
   <f:entry name="mode" title="Choose Mode" field="mode">
-      <select name="mode" onchange="validMe(mode);">
+      <select name="mode">
           <f:option value="singleTest" selected="${instance.mode=='singleTest'}">Single Test</f:option>
           <f:option value="automatch" selected="${instance.mode=='automatch'}">Automatch</f:option>
           <f:option value="tag" selected="${instance.mode=='tag'}">by Tag</f:option>
