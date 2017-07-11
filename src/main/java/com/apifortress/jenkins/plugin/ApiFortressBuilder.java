@@ -166,8 +166,7 @@ public class ApiFortressBuilder extends Builder{
             theUrl.append("tag/"+id+"/run");
         if(getMode().equals("project"))
             theUrl.append("run-all");
-        if(isBlocking()||isDryrun()||isSilent())
-            theUrl.append("?");
+        theUrl.append("?");
         theUrl.append("sync="+isBlocking());
         theUrl.append("&dryrun="+isDryrun());
         theUrl.append("&silent="+isSilent());
@@ -186,7 +185,7 @@ public class ApiFortressBuilder extends Builder{
             wr.close();
             int responseCode = connection.getResponseCode();
             if(responseCode==200) {
-                is = new InputStreamReader(connection.getInputStream());
+                is = new InputStreamReader(connection.getInputStream(),"UTF-8");
                 Object response = new JsonSlurper().parse(is);
                 if (response instanceof ArrayList) {
                     failed = hasFailures((ArrayList) response);
@@ -232,6 +231,8 @@ public class ApiFortressBuilder extends Builder{
      * @return true if the test failued
      */
     private boolean hasFailures(Map item){
+        if(item.containsKey("code") && item.get("code").equals("ACCEPTED"))
+            return false;
         return ((Integer)item.get("failuresCount")) > 0;
     }
 
