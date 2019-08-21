@@ -1,3 +1,6 @@
+## DEPRECATED
+# For integration with Jenkins, please see the integration documentation located here. APIF-Auto, a Python-based command line tool can also be used, learn how here.
+
 # API Fortress Jenkins plugin
 This plugin allows you to add an API testing build step in your Jenkins CI.
 There are multiple testing modes you can choose from, depending on your needs.
